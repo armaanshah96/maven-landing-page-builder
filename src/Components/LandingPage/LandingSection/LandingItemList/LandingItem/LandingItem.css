@@ -1,0 +1,13 @@
+
+.landing-item {
+  border: 1px solid #000;
+  margin-right: 1em;
+  margin-bottom: 3em;
+  padding: 2em;
+  width: 25%;
+  height: 30vh;
+}
+
+.landing-item-description {
+  font-size: 20px;
+}

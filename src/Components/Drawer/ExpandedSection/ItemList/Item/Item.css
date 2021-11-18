@@ -1,0 +1,26 @@
+.item-card {
+  display: flex;
+  padding: .25em 1em;
+  border: 2px solid #C7C7C6;
+  margin-bottom: 1em;
+  cursor: pointer;
+  justify-content: start;
+  color: #666664;
+}
+
+.highlight-item {
+  background-color: #F5FCFB;
+  border: 1px solid #009E3D;
+}
+
+.drag-indicator {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-right: 1em;
+}
+
+.item-card img {
+  width: 20px;
+  height: 20px;
+}

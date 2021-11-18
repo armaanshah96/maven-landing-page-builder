@@ -1,0 +1,8 @@
+.landing-section {
+  padding: 5em;
+  border: 1px dashed #00765E;
+}
+
+.landing-section-highlighted {
+  border: 5px dashed #A7D067;
+}

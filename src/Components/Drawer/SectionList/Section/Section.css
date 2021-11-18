@@ -1,0 +1,29 @@
+.section-card {
+  display: flex;
+  padding: .5em 1em;
+  background-color: #F2F2EF;
+  margin-bottom: 1em;
+  cursor: pointer;
+  justify-content: space-between;
+}
+
+.section-card-heading {
+  display: inherit;
+}
+
+.drag-indicator {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.right-chevron {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.section-card img {
+  width: 20px;
+  height: 20px;
+}

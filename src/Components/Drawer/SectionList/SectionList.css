@@ -1,0 +1,6 @@
+.section-list {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: 4em auto;
+}

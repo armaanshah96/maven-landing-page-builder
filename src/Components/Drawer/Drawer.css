@@ -1,0 +1,6 @@
+.drawer-container {
+  width: 25%;
+  border: 1px solid #000;
+  height: 100vh;
+  flex-grow: 1;
+}
