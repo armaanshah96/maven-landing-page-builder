@@ -1,8 +1,8 @@
-import "./LandingSection.css";
-import LandingHeading from "./LandingHeading";
-import LandingItemList from "./LandingItemList";
 import { useContext, useEffect, useRef } from "react";
 import { ExpandedSectionContext } from "../../../contexts/ExpandedSectionProvider";
+import LandingHeading from "./LandingHeading";
+import LandingItemList from "./LandingItemList";
+import "./LandingSection.css";
 
 function LandingSection({ sectionId }) {
   const { expandedSection } = useContext(ExpandedSectionContext);
@@ -15,6 +15,7 @@ function LandingSection({ sectionId }) {
 
   const sectionStyles =
     "landing-section " + (isHighlighted && "landing-section-highlighted");
+
   return (
     <div className={sectionStyles} ref={ref}>
       <LandingHeading sectionId={sectionId} />

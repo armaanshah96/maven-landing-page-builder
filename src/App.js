@@ -1,13 +1,13 @@
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import "./App.css";
-import OrderedSectionsProvider from "./contexts/OrderedSectionsProvider";
-import SectionsProvider from "./contexts/SectionsProvider";
-import ItemsProvider from "./contexts/ItemsProvider";
-import OrderedSectionItemsProvider from "./contexts/OrderedSectionItemsProvider";
 import Drawer from "./Components/Drawer";
 import LandingPage from "./Components/LandingPage";
 import ExpandedSectionProvider from "./contexts/ExpandedSectionProvider";
+import ItemsProvider from "./contexts/ItemsProvider";
+import OrderedSectionItemsProvider from "./contexts/OrderedSectionItemsProvider";
+import OrderedSectionsProvider from "./contexts/OrderedSectionsProvider";
+import SectionsProvider from "./contexts/SectionsProvider";
 
 function App() {
   return (
@@ -16,12 +16,12 @@ function App() {
         <ItemsProvider>
           <OrderedSectionItemsProvider>
             <ExpandedSectionProvider>
-              <DndProvider backend={HTML5Backend}>
-                <div className="app">
+              <div className="app">
+                <DndProvider backend={HTML5Backend}>
                   <Drawer />
-                  <LandingPage />
-                </div>
-              </DndProvider>
+                </DndProvider>
+                <LandingPage />
+              </div>
             </ExpandedSectionProvider>
           </OrderedSectionItemsProvider>
         </ItemsProvider>

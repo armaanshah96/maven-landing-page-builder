@@ -4,7 +4,6 @@ const INITIAL_SECTIONS = 4;
 const INITIAL_ITEMS_PER_SECTION = 3;
 
 const sectionIds = Array.from(Array(4)).map((_) => uuidv4());
-console.log(sectionIds)
 const itemIds = Array.from(
   Array(INITIAL_ITEMS_PER_SECTION * INITIAL_SECTIONS)
 ).map((_) => uuidv4());

@@ -1,14 +1,16 @@
 import { useContext } from "react";
+import { OrderedSectionsContext } from "../../contexts/OrderedSectionsProvider";
 import "./LandingPage.css";
 import LandingSection from "./LandingSection";
-import { OrderedSectionsContext  } from "../../contexts/OrderedSectionsProvider";
 
 function LandingPage() {
-  const { orderedSections } = useContext(OrderedSectionsContext)
+  const { orderedSections } = useContext(OrderedSectionsContext);
 
   return (
     <div className="landing-page">
-      {orderedSections.map((sectionId) => <LandingSection sectionId={sectionId}/> )}
+      {orderedSections.map((sectionId) => (
+        <LandingSection sectionId={sectionId} />
+      ))}
     </div>
   );
 }
