@@ -1,21 +1,21 @@
-import React from "react";
-import { useContext, useRef } from "react";
+import React, { useContext, useRef } from "react";
 import { useDrag, useDrop } from "react-dnd";
-import { OrderedSectionsContext } from "../../../../contexts/OrderedSectionsProvider";
-import { SectionsContext } from "../../../../contexts/SectionsProvider";
 import DragIcon from "../../../../assets/drag-indicator-gray.png";
 import RightChevron from "../../../../assets/right-chevron.png";
-import "./Section.css";
 import { ExpandedSectionContext } from "../../../../contexts/ExpandedSectionProvider";
+import { OrderedSectionsContext } from "../../../../contexts/OrderedSectionsProvider";
+import { SectionsContext } from "../../../../contexts/SectionsProvider";
+import "./Section.css";
 
 const SECTION_TYPE = "SECTION";
 
 const Section = ({ listIndex, sectionId }) => {
   const ref = useRef(null);
-  const sectionsContext = useContext(SectionsContext);
+  const { sections } = useContext(SectionsContext);
   const { updateExpandedSection } = useContext(ExpandedSectionContext);
   const { moveSection } = useContext(OrderedSectionsContext);
 
+  // eslint-disable-next-line no-unused-vars
   const [_, drop] = useDrop({
     accept: SECTION_TYPE,
     hover(item, monitor) {
@@ -46,6 +46,8 @@ const Section = ({ listIndex, sectionId }) => {
       item.listIndex = hoverIndex;
     },
   });
+
+  // eslint-disable-next-line no-unused-vars
   const [collected, drag] = useDrag({
     type: SECTION_TYPE,
     item: () => {
@@ -65,7 +67,7 @@ const Section = ({ listIndex, sectionId }) => {
         <div className="drag-indicator">
           <img src={DragIcon} alt="drag" />
         </div>
-        <h3>{sectionsContext.sections[sectionId].heading}</h3>
+        <h3>{sections[sectionId].heading}</h3>
       </div>
       <div className="right-chevron">
         <img src={RightChevron} alt="select" />

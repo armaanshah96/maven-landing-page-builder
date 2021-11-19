@@ -1,5 +1,4 @@
-import React from "react";
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { OrderedSectionItemsContext } from "../../../../contexts/OrderedSectionItemsProvider";
 import Item from "./Item";
 import "./ItemList.css";

@@ -1,15 +1,15 @@
 import { useContext, useState } from "react";
-import { SectionsContext } from "../../../contexts/SectionsProvider";
-import { ExpandedSectionContext } from "../../../contexts/ExpandedSectionProvider";
-import ExpandedItem from "./ExpandedItem";
-import ItemList from "./ItemList";
 import BackArrow from "../../../assets/left-arrow.png";
+import { ExpandedSectionContext } from "../../../contexts/ExpandedSectionProvider";
+import { SectionsContext } from "../../../contexts/SectionsProvider";
+import ExpandedItem from "./ExpandedItem";
 import "./ExpandedSection.css";
+import ItemList from "./ItemList";
 
 const ExpandedSection = ({ sectionId }) => {
   const [expandedItem, setExpandedItem] = useState(null);
   const { updateExpandedSection } = useContext(ExpandedSectionContext);
-  const sectionsContext = useContext(SectionsContext);
+  const { sections, updateHeader } = useContext(SectionsContext);
 
   const resetView = () => {
     updateExpandedSection(null);
@@ -17,7 +17,7 @@ const ExpandedSection = ({ sectionId }) => {
   };
 
   return (
-    <div className='expanded-section'>
+    <div className="expanded-section">
       <div class="expanded-section-header">
         <button class="back-button" onClick={resetView}>
           <img src={BackArrow} alt="back" />
@@ -29,14 +29,16 @@ const ExpandedSection = ({ sectionId }) => {
         <p className="input-label">Section Heading</p>
         <input
           type="text"
-          value={sectionsContext.sections[sectionId].heading}
-          onChange={(e) =>
-            sectionsContext.updateHeader(sectionId, e.target.value)
-          }
+          value={sections[sectionId].heading}
+          onChange={(e) => updateHeader(sectionId, e.target.value)}
         />
       </div>
 
-      <ItemList sectionId={sectionId} expandedItem={expandedItem} setExpandedItem={setExpandedItem} />
+      <ItemList
+        sectionId={sectionId}
+        expandedItem={expandedItem}
+        setExpandedItem={setExpandedItem}
+      />
 
       {expandedItem && <ExpandedItem expandedItemId={expandedItem} />}
     </div>

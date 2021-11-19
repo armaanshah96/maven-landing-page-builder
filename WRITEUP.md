@@ -22,6 +22,7 @@ The UI is built in two parts:
 - Re-usable UI components (input components, draggable elements in a list)
 - Re-assess whether Context is the right approach for state management
 - Dragging UX: more user feedback
+- Tests :)
 
 
 Note: I heavily followed react-dnd examples for the list drag and drop implementation
